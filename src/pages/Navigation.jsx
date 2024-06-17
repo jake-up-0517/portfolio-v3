@@ -11,10 +11,16 @@ export default function Navigation() {
 
   return (
     <div className="fixed top-0 left-0 w-full h-24 flex flex-row justify-between items-center p-4 bg-white dark:bg-slate-900 shadow-md">
-      <Avatar>
-        <AvatarImage src={avatar} alt="Avatar" />
-        <AvatarFallback>JC</AvatarFallback>
-      </Avatar>
+      <a
+        href="https://github.com/jake-up-0517"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <Avatar>
+          <AvatarImage src={avatar} alt="Avatar" />
+          <AvatarFallback>JC</AvatarFallback>
+        </Avatar>
+      </a>
       <Separator orientation="vertical" />
       <Button onClick={scrollToTop} variant="navigation">
         Home
@@ -31,12 +37,6 @@ export default function Navigation() {
           Projects
         </Link>
       </Button>
-      {/* <Separator orientation="vertical" />
-      <Button asChild variant="navigation">
-        <Link to="contact" smooth>
-          Contact
-        </Link>
-      </Button> */}
     </div>
   );
 }

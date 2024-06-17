@@ -25,7 +25,7 @@ export default function Projects() {
         className="w-2/3"
       >
         <AccordionItem value="argometrics">
-          <AccordionTrigger className="bg-sky-700 text-slate-100">
+          <AccordionTrigger className="bg-sky-700 text-slate-100 h-20">
             Argometrics
           </AccordionTrigger>
           <AccordionContent>
@@ -47,7 +47,7 @@ export default function Projects() {
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="egg-game">
-          <AccordionTrigger className="bg-sky-800 text-slate-100">
+          <AccordionTrigger className="bg-sky-800 text-slate-100 h-20">
             Egg Game
           </AccordionTrigger>
           <AccordionContent>
@@ -75,7 +75,7 @@ export default function Projects() {
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="Jamd">
-          <AccordionTrigger className="bg-sky-900 text-slate-100">
+          <AccordionTrigger className="bg-sky-900 text-slate-100 h-20">
             Jamd
           </AccordionTrigger>
           <AccordionContent>
@@ -93,7 +93,7 @@ export default function Projects() {
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="Portfolio">
-          <AccordionTrigger className="bg-sky-950 text-slate-100">
+          <AccordionTrigger className="bg-sky-950 text-slate-100 h-20">
             Portfolio
           </AccordionTrigger>
           <AccordionContent>
@@ -101,7 +101,10 @@ export default function Projects() {
               <div className="mt-2 text-center">
                 This portfolio site. Built using React and shadcn/ui.
               </div>
-              <a href="https://github.com/jake-up-0517/jamd" target="_blank">
+              <a
+                href="https://github.com/jake-up-0517/portfolio-v3"
+                target="_blank"
+              >
                 <Button variant="default" size="sm" className="mt-3">
                   GitHub
                 </Button>
