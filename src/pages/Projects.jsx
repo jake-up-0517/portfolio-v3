@@ -1,118 +1,118 @@
+import { useState } from 'react';
 import { Element } from 'react-scroll';
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from '@/components/ui/accordion';
-import { Button } from '@/components/ui/button';
+import Modal from './Modal';
 
 export default function Projects() {
+  const [isModalVisible, setIsModalVisible] = useState(false);
+  const [modalContent, setModalContent] = useState('');
+  const [modalLink, setModalLink] = useState('');
+  const [modalButton, setModalButton] = useState('');
+
+  const handleMouseEnter = (content, link, button) => {
+    setModalContent(content);
+    setModalLink(link);
+    setModalButton(button);
+    setIsModalVisible(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsModalVisible(false);
+  };
+
+  const argometrics = {
+    content: `A Kubernetes visualizer that graphically displays real-time insights into cluster health. Built using React, Node.js, and MongoDB.`,
+    link: `https://github.com/oslabs-beta/Argometrics`,
+    button: `GitHub`,
+  };
+  const eggGame = {
+    content: `Inspired by the game featured in the series I Think You Should Leave with Tim Robinson on Netflix.`,
+    link: `https://egg-game-blue.vercel.app/`,
+    button: `Try It!`,
+  };
+  const jamd = {
+    content: `A mobile app to find and alert nearby friends if you are in need. Built using React Native, Node.js, MongoDB, and SQLite.`,
+    link: `https://github.com/jake-up-0517/jamd`,
+    button: `GitHub`,
+  };
+  const portfolio = {
+    content: `This portfolio site. Built using React, Tailwind, shadcn/ui, and Vite.`,
+    link: `https://github.com/jake-up-0517/portfolio-v3`,
+    button: `GitHub`,
+  };
+
   return (
     <Element
       name="projects"
-      className="w-screen h-screen flex flex-col justify-center items-center"
+      className="relative w-screen h-screen flex flex-col justify-center items-start"
     >
-      <div className="flex justify-center mb-7 border-b border-black w-2/3 pb-2">
-        <h2 className="text-5xl font-extrabold tracking-tight lg:text-5xl">
+      <div className="flex justify-start ml-10 border-b border-[#E12920] w-2/3 pb-2">
+        <h2 className="text-5xl md:text-8xl font-extrabold tracking-tight">
           Projects
         </h2>
       </div>
-      <Accordion
-        type="single"
-        collapsible
-        defaultValue="argometrics"
-        className="w-2/3"
-      >
-        <AccordionItem value="argometrics">
-          <AccordionTrigger className="bg-sky-700 text-slate-100 h-20">
+      <div className="flex flex-col justify-start ml-10 w-2/3">
+        <a
+          href={argometrics.link}
+          target="_blank"
+          onMouseEnter={() =>
+            handleMouseEnter(
+              argometrics.content,
+              argometrics.link,
+              argometrics.button
+            )
+          }
+          onMouseLeave={handleMouseLeave}
+        >
+          <div className="flex items-center h-28 text-xl md:text-5xl font-bold tracking-tight border-b border-[#E12920] hover:bg-[#E12920] transition-colors duration-300">
             Argometrics
-          </AccordionTrigger>
-          <AccordionContent>
-            <div className="flex flex-col justify-center items-center">
-              <div className="mt-2 text-center">
-                A Kubernetes visualizer that graphically displays real-time
-                insights into cluster health. Built using React, Node.js, and
-                MongoDB.
-              </div>
-              <a
-                href="https://github.com/oslabs-beta/Argometrics"
-                target="_blank"
-              >
-                <Button variant="default" size="sm" className="mt-3">
-                  GitHub
-                </Button>
-              </a>
-            </div>
-          </AccordionContent>
-        </AccordionItem>
-        <AccordionItem value="egg-game">
-          <AccordionTrigger className="bg-sky-800 text-slate-100 h-20">
+          </div>
+        </a>
+        <a
+          href={eggGame.link}
+          target="_blank"
+          onMouseEnter={() =>
+            handleMouseEnter(eggGame.content, eggGame.link, eggGame.button)
+          }
+          onMouseLeave={handleMouseLeave}
+        >
+          <div className="flex items-center h-28 text-xl md:text-5xl font-bold tracking-tight border-b border-[#E12920] hover:bg-[#E12920] transition-colors duration-300">
             Egg Game
-          </AccordionTrigger>
-          <AccordionContent>
-            <div className="flex flex-col justify-center items-center">
-              <div className="mt-2 text-center">
-                Inspired by the game featured in the series I Think You Should
-                Leave with Tim Robinson on Netflix.
-              </div>
-              <div className="flex justify-center w-full">
-                <a
-                  href="https://github.com/jake-up-0517/egg-game"
-                  target="_blank"
-                >
-                  <Button variant="default" size="sm" className="mt-3 mr-6">
-                    GitHub
-                  </Button>
-                </a>
-                <a href="https://egg-game-blue.vercel.app/" target="_blank">
-                  <Button variant="default" size="sm" className="mt-3">
-                    Try It!
-                  </Button>
-                </a>
-              </div>
-            </div>
-          </AccordionContent>
-        </AccordionItem>
-        <AccordionItem value="Jamd">
-          <AccordionTrigger className="bg-sky-900 text-slate-100 h-20">
+          </div>
+        </a>
+        <a
+          href={jamd.link}
+          target="_blank"
+          onMouseEnter={() =>
+            handleMouseEnter(jamd.content, jamd.link, jamd.button)
+          }
+          onMouseLeave={handleMouseLeave}
+        >
+          <div className="flex items-center h-28 text-xl md:text-5xl font-bold tracking-tight border-b border-[#E12920] hover:bg-[#E12920] transition-colors duration-300">
             Jamd
-          </AccordionTrigger>
-          <AccordionContent>
-            <div className="flex flex-col justify-center items-center">
-              <div className="mt-2 text-center">
-                A mobile app to find and alert nearby friends if you are in
-                need. Built using React Native, Node.js, MongoDB, and SQLite.
-              </div>
-              <a href="https://github.com/jake-up-0517/jamd" target="_blank">
-                <Button variant="default" size="sm" className="mt-3">
-                  GitHub
-                </Button>
-              </a>
-            </div>
-          </AccordionContent>
-        </AccordionItem>
-        <AccordionItem value="Portfolio">
-          <AccordionTrigger className="bg-sky-950 text-slate-100 h-20">
+          </div>
+        </a>
+        <a
+          href={portfolio.link}
+          target="_blank"
+          onMouseEnter={() =>
+            handleMouseEnter(
+              portfolio.content,
+              portfolio.link,
+              portfolio.button
+            )
+          }
+          onMouseLeave={handleMouseLeave}
+        >
+          <div className="flex items-center h-28 text-xl md:text-5xl font-bold tracking-tight border-b border-[#E12920] hover:bg-[#E12920] transition-colors duration-300">
             Portfolio
-          </AccordionTrigger>
-          <AccordionContent>
-            <div className="flex flex-col justify-center items-center">
-              <div className="mt-2 text-center">
-                This portfolio site. Built using React and shadcn/ui.
-              </div>
-              <a
-                href="https://github.com/jake-up-0517/portfolio-v3"
-                target="_blank"
-              >
-                <Button variant="default" size="sm" className="mt-3">
-                  GitHub
-                </Button>
-              </a>
-            </div>
-          </AccordionContent>
-        </AccordionItem>
-      </Accordion>
+          </div>
+        </a>
+      </div>
+      {isModalVisible && (
+        <div className="absolute right-0 top-0 h-screen w-1/2 flex flex-col justify-center items-center">
+          <Modal content={modalContent} link={modalLink} button={modalButton} />
+        </div>
+      )}
     </Element>
   );
 }
